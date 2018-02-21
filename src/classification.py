@@ -44,10 +44,10 @@ def classfy(clf):
 
     return np.mean(class_predicted == target_test), report
 
-clf = SVC(random_state = 0, kernel = 'linear')
-clf  =  DecisionTreeClassifier(random_state = 0)
-a, report = classfy(clf)
-print(a)
+# clf = SVC(random_state = 0, kernel = 'linear')
+# clf  =  DecisionTreeClassifier(random_state = 0)
+# a, report = classfy(clf)
+# print(a)
 # print(report[-15:-10])
 # print(report[-25:-20])
 # print(report[-35:-30])
