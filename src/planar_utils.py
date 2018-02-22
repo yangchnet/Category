@@ -15,9 +15,9 @@ def plot_decision_boundary(model, X, y):
     Z = model(np.c_[xx.ravel(), yy.ravel()])
     Z = Z.reshape(xx.shape)
     # Plot the contour and training examples
-    plt.contour(xx, yy, Z, cmap=plt.cm.Spectral)
-    plt.ylabel('x2')
-    plt.xlabel('x1')
+    plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
+    # plt.ylabel('x2')
+    # plt.xlabel('x1')
     plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
 
 def sigmoid(x):
@@ -34,7 +34,7 @@ def sigmoid(x):
     return s
 
 def load_planar_dataset():
-    np.random.seed(1)
+    np.random.seed(4)
     m = 400 # number of examples
     N = int(m/2) # number of points per class
     D = 2 # dimensionality
@@ -44,9 +44,10 @@ def load_planar_dataset():
 
     for j in range(2):
         ix = range(N*j,N*(j+1))
-        t = np.linspace(j*3.12,(j+1)*3.12,N) + np.random.randn(N)*0.2 # theta
-        r = a*np.sin(4*t) + np.random.randn(N)*0.2 # radius
-        X[ix] = np.c_[r*np.sin(t), r*np.cos(t)]
+        t = np.linspace(j*3.12, (j+1)*3.12, N) + np.random.rand(N)*0.2 # theta
+        # r = a*np.sin(4*t) + np.random.rand(N)*0.2 # radius
+        r = a * (np.sin(4 * t) ) + np.random.rand(N) * 0.2  # radius
+        X[ix] = np.c_[r*(np.sin(t)), r*(np.cos(t))]
         Y[ix] = j
         
     X = X.T
