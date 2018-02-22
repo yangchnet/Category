@@ -39,7 +39,7 @@ for c, m, zlow, zhigh in [('y', 'o', -50, -25), ('b', '^', -30, -5)]:
     xs = data['X1']
     ys = data['X2']
     zs =np.sin( data['y'])
-    ax.scatter(xs, ys, zs, c=c, marker=m)
+    ax.scatter(xs, ys, zs,  marker=m)
 
 ax.set_xlabel('X Label')
 ax.set_ylabel('Y Label')
