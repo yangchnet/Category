@@ -6,6 +6,7 @@ import os
 import urllib
 from src.get_text import gettext
 os.path.abspath('..')
+'''运行程序前，需建立data文件夹，内含64个子文件夹，命名为1--64'''
 
 html_List = [[0 for i in range(0)]for j in range(65)]
 str1 = "http://jobs.51job.com/hy"        #http://jobs.51job.com/hy37/p1/
